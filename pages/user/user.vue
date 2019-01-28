@@ -1,8 +1,19 @@
 <template>
     <view class="content">
         <view class="btn-row">
+			<!--  -->			
             <button v-if="!hasLogin" type="primary" class="primary" @tap="bindLogin">登录</button>
-            <button v-if="hasLogin" type="default" @tap="bindLogout">退出登录</button>
+			<view v-if="hasLogin" style="padding: 10upx;">
+				<view>
+					<text >用户名:</text>
+					<text v-text="userName"></text>
+				</view>
+				<view>
+					<text >邮箱:</text>
+					<text v-text="userName"></text>
+				</view>
+				 <button  type="default" @tap="bindLogout">退出登录</button>
+			</view>
         </view>
     </view>
 </template>
@@ -15,7 +26,7 @@
 
     export default {
         computed: {
-            ...mapState(['hasLogin', 'forcedLogin'])
+            ...mapState(['hasLogin', 'forcedLogin','userName'])
         },
         methods: {
             ...mapMutations(['logout']),

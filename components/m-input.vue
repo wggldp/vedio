@@ -7,7 +7,7 @@
             <m-icon color="#666666" type="clear" size="20" @click="clear"></m-icon>
         </view>
         <view v-if="displayable_" class="m-input-icon">
-            <m-icon :color="showPassword?'#666666':'#cccccc'" type="eye" size="20" @click="display"></m-icon>
+            <m-icon  :color="showPassword?'#666666':'#cccccc'" type="eye" size="20" @click="display"></m-icon>
         </view>
     </view>
 </template>
@@ -114,7 +114,7 @@
         align-items: center;
         width: 100%;
         flex: 1;
-        padding: 0 10rpx;
+        padding: 0 30rpx;
     }
 
     .m-input-input {

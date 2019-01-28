@@ -15,8 +15,10 @@ const addUser = function (userInfo) {
     let users = getUsers();
     users.push({
         account: userInfo.account,
-        password: userInfo.password
+        password: userInfo.password,
+		email:userInfo.email
     });
+	// 本地同步缓存
     uni.setStorageSync(USERS_KEY, JSON.stringify(users));
 }
 
