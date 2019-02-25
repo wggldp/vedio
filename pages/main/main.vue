@@ -7,20 +7,20 @@
             <view class="ul">
 				<mSearch :mode="2" button="inside" :show="false" @search="search($event,3)"></mSearch>
             </view>
-			<!-- <view class="uni-list">
+			<view class="uni-list">
 			    <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(value,key) in listData" :key="key"
 			       >
 			        <view class="uni-media-list">
 			            <view class="uni-media-list-body">
-			                <view class="uni-media-list-text-top"></view>
+			                <view class="uni-media-list-text-top">{{value.name}}</view>
 			                <view class="uni-media-list-text-bottom">
-			                    <text></text>
-			                    <text></text>
+			                    <text>{{value.name}}</text>
+			                    <text>{{value.name}}</text>
 			                </view>
 			            </view>
 			        </view>
 			    </view>
-			</view> -->
+			</view>
         </view>
         <view v-if="!hasLogin" class="hello">
             <view class="title">
@@ -38,7 +38,7 @@
     import {
         mapState
     } from 'vuex'
-	import mSearch from "../../components/search.vue"
+	import mSearch from "../../components/mehaotian-search.vue"
 	
     export default {
 		components:{mSearch},
@@ -77,8 +77,8 @@
             }
         },
 		methods:{
-			search:(a,b)=>{
-				console.log("aaa")
+			search:function(a,b){
+				this.listData.push({"name":"aaa"});
 			}
 		}
     }

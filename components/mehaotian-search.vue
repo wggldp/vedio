@@ -3,17 +3,18 @@
 		<view class="content" :style="{'border-radius':radius+'px'}">
 			<view class="content-box" :class="{'center':mode === 2}">
 				<text class="icon icon-serach">&#xe61c;</text>
-				<input class="input" :class="{'center':!active && mode === 2}" :focus="isFocus" placeholder="请输入搜索内容" v-model="inputVal" @focus="focus" @blur="blur"/>
+				<input class="input" confirm-type="search" :class="{'center':!active && mode === 2}" @confirm="search"
+				:focus="isFocus" placeholder="请输入搜索内容" v-model="inputVal" @focus="focus" @blur="blur"/>
 				<!-- <view v-if="!active && mode === 2" class="input sub" @click="getFocus">请输入搜索内容</view> -->
 				<text v-if="isDelShow" class="icon icon-del" @click="clear">&#xe644;</text>
 			</view>
-			<view v-show="(active&&show&&button === 'inside')||(isDelShow && button === 'inside')" class="serachBtn" @click="search">
+			<!-- <view v-show="(active&&show&&button === 'inside')||(isDelShow && button === 'inside')" class="serachBtn" @click="search">
 				搜索
-			</view>
+			</view> -->
 		</view>
-		<view  v-if="button === 'outside'" class="button" :class="{'active':show||active}" @click="search">
+		<!-- <view  v-if="button === 'outside'" class="button" :class="{'active':show||active}" @click="search">
 			<view class="button-item">{{!show?searchName:'搜索'}}</view>
-		</view>
+		</view> -->
 	</view>
 </template>
 

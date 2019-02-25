@@ -68,6 +68,7 @@
 					url: 'https://unidemo.dcloud.net.cn/api/news',
 					data: data,
 					success: (data) => {
+						uni.stopPullDownRefresh();
 					    if (data.statusCode == 200) {
 					        let list = this.setTime(data.data);
 					        this.listData = this.reload ? list : this.listData.concat(list);
